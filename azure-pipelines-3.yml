@@ -34,3 +34,12 @@ steps:
   inputs:
     command: 'build'
     Dockerfile: '**/AzureDockerfile'
+- task: ECRPushImage@1
+  inputs:
+    awsCredentials: 'AWS Account Id: 561620897507'
+    regionName: 'us-east-1'
+    imageSource: 'imageid'
+    sourceImageId: '5959b4122236'
+    repositoryName: 'azuredevopsdemo'
+    autoCreateRepository: true
+    forceDockerNamingConventions: true
